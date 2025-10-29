@@ -1,19 +1,11 @@
-import React from 'react'
-import './styles.css'
+import { ReactNode } from "react";
 
-export const metadata = {
-  description: 'A blank template using Payload in a Next.js app.',
-  title: 'Payload Blank Template',
-}
+type Props = {
+    children: ReactNode;
+};
 
-export default async function RootLayout(props: { children: React.ReactNode }) {
-  const { children } = props
-
-  return (
-    <html lang="en">
-      <body>
-        <main>{children}</main>
-      </body>
-    </html>
-  )
+// Since we have a `not-found.tsx` page on the root, a layout file
+// is required, even if it's just passing children through.
+export default function RootLayout({ children }: Props) {
+    return children;
 }
