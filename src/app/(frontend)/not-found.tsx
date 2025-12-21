@@ -1,17 +1,9 @@
-"use client";
-
-import Error from "next/error";
+import { redirect } from 'next/navigation'
+import { routing } from '@/i18n/routing'
 
 // This page renders when a route like `/unknown.txt` is requested.
-// In this case, the layout at `app/[locale]/layout.tsx` receives
-// an invalid value as the `[locale]` param and calls `notFound()`.
-
+// Redirect to the default locale's not-found page so all not-found cases
+// are handled by LocaleNotFound component.
 export default function GlobalNotFound() {
-    return (
-        <html lang="en">
-            <body>
-                <Error statusCode={404} />;
-            </body>
-        </html>
-    );
+  redirect(`/${routing.defaultLocale}/not-found`)
 }
