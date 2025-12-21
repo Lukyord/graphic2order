@@ -18,6 +18,7 @@ import { routing } from '@/i18n/routing'
 import Header from '@/components/header/Header'
 import Theme from '@/components/theme'
 import LenisProvider from '@/components/LenisProvider'
+import CursorFollower from '@/components/common/cursor-follower'
 
 const prompt = Prompt({
   subsets: ['latin'],
@@ -55,6 +56,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <div id="page">
               <Header />
               <Theme />
+              <CursorFollower />
               {children}
             </div>
           </body>

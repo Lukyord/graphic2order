@@ -95,6 +95,60 @@
   gap: var(--spacing-2md);
 }
 
+/* CURSOR FOLLOWER */
+.cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -75%);
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    width var(--duration) var(--timing-function),
+    background-color var(--duration) var(--timing-function);
+  will-change: transform;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cursor-follower {
+    opacity: 1;
+  }
+}
+
+.cursor-follower span {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--duration) var(--timing-function);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  color: var(--color-white);
+}
+
+.cursor-follower.is-hovering {
+  width: 1.6rem;
+  background-color: var(--color-light-blue);
+}
+
+.cursor-follower.is-hovering-view {
+  width: 4rem;
+  background-color: var(--color-blue);
+}
+
+.cursor-follower.is-hovering-view span {
+  transition-delay: 0.1s;
+  opacity: 1;
+  visibility: visible;
+}
+
 /* FOOTER */
 
 /* PAGE */
