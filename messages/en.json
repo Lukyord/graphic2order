@@ -1,5 +1,18 @@
 {
-    "HomePage": {
-        "title": "Hello world!"
+  "General": {
+    "Button": {
+      "get-in-touch": "Get In Touch"
     }
+  },
+  "Header": {
+    "menu": {
+      "work": "Our Work",
+      "services": "Our Services",
+      "pricing": "Pricing",
+      "about": "About Us"
+    }
+  },
+  "HomePage": {
+    "title": "Hello world!"
+  }
 }

@@ -1,4 +1,17 @@
 {
+  "General": {
+    "Button": {
+      "get-in-touch": "พูดคุยกับเรา"
+    }
+  },
+  "Header": {
+    "menu": {
+      "work": "ผลงานของเรา",
+      "services": "บริการของเรา",
+      "pricing": "ราคา",
+      "about": "เกี่ยวกับเรา"
+    }
+  },
   "HomePage": {
     "title": "ยินดีต้อนรับสู่หน้าแรก"
   }

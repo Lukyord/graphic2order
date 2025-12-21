@@ -1,15 +1,29 @@
 // storage-adapter-import-placeholder
 import { sqliteD1Adapter } from '@payloadcms/db-d1-sqlite' // database-adapter-import
-import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import { lexicalEditor, LinkFeature } from '@payloadcms/richtext-lexical'
 import path from 'path'
-import { buildConfig } from 'payload'
+import { buildConfig, Locale } from 'payload'
+import type { Locale as DefinedLocale } from '@/i18n/routing'
 import { fileURLToPath } from 'url'
 import { CloudflareContext, getCloudflareContext } from '@opennextjs/cloudflare'
 import { GetPlatformProxyOptions } from 'wrangler'
 import { r2Storage } from '@payloadcms/storage-r2'
+import { seoPlugin } from '@payloadcms/plugin-seo'
+import { OverviewField } from '@payloadcms/plugin-seo/fields'
 
-import { Users } from './collections/Users'
-import { Media } from './collections/Media'
+import { Users } from './payload/collections/Users'
+import { Media } from './payload/collections/Media'
+
+import { ContactSettings } from './payload/globals/ContactSetting'
+import { WorkSettings } from './payload/globals/WorkSetting'
+import { AboutSettings } from './payload/globals/AboutSetting'
+import { ServiceSettings } from './payload/globals/ServiceSetting'
+import { PricingSettings } from './payload/globals/PricingSetting'
+import { HomepageSettings } from './payload/globals/HomepageSetting'
+import { SiteSettings } from './payload/globals/SiteSetting'
+
+import { WorkTypes } from './payload/collections/WorkTypes'
+import { Works } from './payload/collections/Works'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -26,9 +40,66 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
+    meta: {
+      titleSuffix: ' | Admin',
+    },
+    components: {
+      graphics: {
+        Icon: {
+          path: '@/payload/components/PayloadIcon',
+        },
+        Logo: {
+          path: '@/payload/components/PayloadLogo',
+        },
+      },
+    },
   },
-  collections: [Users, Media],
-  editor: lexicalEditor(),
+  localization: {
+    locales: [
+      {
+        code: 'en',
+        label: 'English',
+      },
+      {
+        code: 'th',
+        label: 'Thai',
+      },
+    ] as (Locale & {
+      code: DefinedLocale
+    })[],
+    defaultLocale: 'en',
+  },
+  collections: [Users, Media, WorkTypes, Works],
+  globals: [
+    SiteSettings,
+    HomepageSettings,
+    ContactSettings,
+    WorkSettings,
+    AboutSettings,
+    ServiceSettings,
+    PricingSettings,
+  ],
+  editor: lexicalEditor({
+    features: ({ defaultFeatures }) => [
+      ...defaultFeatures,
+      LinkFeature({
+        fields: ({ defaultFields }) => [
+          ...defaultFields,
+          {
+            name: 'rel',
+            label: 'Rel Attribute',
+            type: 'select',
+            hasMany: true,
+            options: ['noopener', 'noreferrer', 'nofollow'],
+            admin: {
+              description:
+                'The rel attribute defines the relationship between a linked resource and the current document. This is a custom link field.',
+            },
+          },
+        ],
+      }),
+    ],
+  }),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
@@ -41,6 +112,24 @@ export default buildConfig({
     r2Storage({
       bucket: cloudflare.env.R2,
       collections: { media: true },
+    }),
+    seoPlugin({
+      globals: [
+        'homepage-settings',
+        'work-settings',
+        'contact-settings',
+        'about-settings',
+        'pricing-settings',
+        'service-settings',
+      ],
+      uploadsCollection: 'media',
+      tabbedUI: true,
+      fields: ({ defaultFields }) => [
+        ...defaultFields,
+        OverviewField({
+          imagePath: 'meta.image',
+        }),
+      ],
     }),
   ],
 })

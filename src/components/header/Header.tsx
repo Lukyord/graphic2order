@@ -6,6 +6,7 @@ import { useState, useEffect, useRef } from 'react'
 
 import LocaleSwitcher from './LocaleSwitcher'
 import HeaderMenuCtrl from './HeaderMenuCtrl'
+import { useTranslations } from 'next-intl'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -22,6 +23,9 @@ export default function Header() {
   const closeMenu = () => {
     setIsMenuOpen(false)
   }
+
+  const tHeaderMenu = useTranslations('Header.menu')
+  const tGeneralButton = useTranslations('General.Button')
 
   return (
     <header id="header" ref={headerRef}>
@@ -45,22 +49,22 @@ export default function Header() {
                 <ul className="menu">
                   <li>
                     <Link href="/work" onClick={closeMenu}>
-                      Our Work
+                      {tHeaderMenu('work')}
                     </Link>
                   </li>
                   <li>
                     <Link href="/service" onClick={closeMenu}>
-                      Our Services
+                      {tHeaderMenu('services')}
                     </Link>
                   </li>
                   <li>
                     <Link href="/pricing" onClick={closeMenu}>
-                      Pricing
+                      {tHeaderMenu('pricing')}
                     </Link>
                   </li>
                   <li>
                     <Link href="/about" onClick={closeMenu}>
-                      About Us
+                      {tHeaderMenu('about')}
                     </Link>
                   </li>
                   <li>
@@ -74,7 +78,7 @@ export default function Header() {
 
         <div className="header-actions">
           <Link href="/contact" className="button">
-            <span>Get In Touch</span>
+            <span>{tGeneralButton('get-in-touch')}</span>
           </Link>
 
           <HeaderMenuCtrl isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
