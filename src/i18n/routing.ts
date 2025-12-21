@@ -14,5 +14,6 @@ export const routing = defineRouting({
     '/service': '/service',
     '/pricing': '/pricing',
     '/about': '/about',
+    '/contact': '/contact',
   },
 })

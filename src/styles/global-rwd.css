@@ -139,6 +139,21 @@
   .sc-inner.mb-b-200 {
     padding-bottom: calc(var(--gap-section) * 2);
   }
+
+  /* CTAs ====================*/
+  .button {
+    --button-height: 3.1rem;
+    --button-padding-x: var(--spacing-2xs);
+  }
+
+  .button:after,
+  .button:before {
+    content: none;
+  }
+
+  html.no-touchevents .button:hover span {
+    padding-right: var(--button-padding-x);
+  }
 }
 
 @media (max-width: 767px) {

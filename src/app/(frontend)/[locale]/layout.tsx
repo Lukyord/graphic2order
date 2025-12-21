@@ -8,6 +8,8 @@ import '@/styles/theme-rwd.css'
 import '@/styles/iconfont.css'
 import 'lenis/dist/lenis.css'
 
+import { Prompt } from 'next/font/google'
+
 import { notFound } from 'next/navigation'
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
@@ -16,6 +18,12 @@ import { routing } from '@/i18n/routing'
 import Header from '@/components/header/Header'
 import Theme from '@/components/theme'
 import LenisProvider from '@/components/LenisProvider'
+
+const prompt = Prompt({
+  subsets: ['latin'],
+  variable: '--font-prompt',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+})
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -43,7 +51,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html lang={locale}>
       <NextIntlClientProvider>
         <LenisProvider>
-          <body>
+          <body className={`${prompt.variable}`}>
             <div id="page">
               <Header />
               <Theme />

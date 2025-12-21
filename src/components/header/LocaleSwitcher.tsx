@@ -1,10 +1,12 @@
 'use client'
 
-import { setUserLocale } from '@/app/lib/locale'
 import { Locale, locales } from '@/i18n/routing'
 import { usePathname } from '@/i18n/navigation'
 import { useLocale } from 'next-intl'
 import { useState } from 'react'
+import Popup from '../common/popup/popup'
+import PopupTrigger from '../common/popup/popup-trigger'
+import PopupContent from '../common/popup/popup-content'
 
 export default function LocaleSwitcher() {
   const [isPending, setIsPending] = useState(false)
@@ -20,13 +22,13 @@ export default function LocaleSwitcher() {
   }
 
   return (
-    <div className="locale-switcher popup">
-      <button className="popup-trigger">
-        <span className="popup-trigger-text">{locale}</span>
+    <Popup position="center">
+      <PopupTrigger>
+        <span className="popup-trigger-text uppercase">{locale}</span>
         <i className="ic ic-chevron-down size-icon-4xs"></i>
-      </button>
+      </PopupTrigger>
 
-      <div className="popup-content">
+      <PopupContent>
         <ul className="popup-option-list">
           {locales.map((loc) => (
             <li key={loc}>
@@ -40,7 +42,7 @@ export default function LocaleSwitcher() {
             </li>
           ))}
         </ul>
-      </div>
-    </div>
+      </PopupContent>
+    </Popup>
   )
 }

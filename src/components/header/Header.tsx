@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 
 import LocaleSwitcher from './LocaleSwitcher'
+import HeaderMenuCtrl from './HeaderMenuCtrl'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -62,6 +63,9 @@ export default function Header() {
                       About Us
                     </Link>
                   </li>
+                  <li>
+                    <LocaleSwitcher />
+                  </li>
                 </ul>
               </div>
             </div>
@@ -69,7 +73,11 @@ export default function Header() {
         </nav>
 
         <div className="header-actions">
-          <LocaleSwitcher />
+          <Link href="/contact" className="button">
+            <span>Get In Touch</span>
+          </Link>
+
+          <HeaderMenuCtrl isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
         </div>
       </div>
     </header>

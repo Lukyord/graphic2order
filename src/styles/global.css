@@ -16,16 +16,17 @@
   --color-light-blue: #0466ff;
   --color-light-blue-rgb: 0, 102, 255;
 
+  --color-blue: #1441f2;
+  --color-blue-rgb: 20, 65, 242;
+
   --color-base-gray: #e5e6e0;
   --color-base-gray-rgb: 229, 230, 224;
 
   --color-text-black: #333333;
   --color-text-black-rgb: 51, 51, 51;
 
-  --font-body: 'Inter', 'sans-serif';
-  --font-heading: 'Times New Roman', 'serif';
-  --font-cursive: 'MonteCarlo', 'cursive';
-  --font-hand: 'Oooh Baby', 'cursive';
+  --font-body: 'Prompt', 'sans-serif';
+  --font-heading: var(--font-body);
 
   --font-size-h1: 6rem;
   --font-size-h2: 4.8rem;
@@ -508,6 +509,10 @@ html.resizing * {
   display: block;
 }
 
+.ic:before {
+  display: block;
+}
+
 /* ANIMATE ==================== */
 @keyframes fadeIn {
   from {
@@ -572,18 +577,64 @@ html.resizing * {
 
 /* CTAs ====================*/
 .button {
-  --button-border: 0.1rem solid var(--color-almond-bloom);
-  --button-hover-border: var(--button-border);
-  --button-bg: transparent;
-  --button-hover-bg: var(--color-almond-bloom);
-  --button-color: var(--color-almond-bloom);
-  --button-hover-color: var(--color-forest-seed);
+  --bg-color: var(--color-blue);
+  --button-height: 3.8rem;
+  --button-padding-x: var(--spacing-xs);
+  --button-padding-y: var(--spacing-5xs);
+  display: flex;
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  color: var(--color-white);
+  height: var(--button-height);
+  position: relative;
 }
 
-html.no-touchevents .button:hover {
-  color: var(--button-hover-color);
-  background-color: var(--button-hover-bg);
-  border: var(--button-hover-border);
+.button > span {
+  padding: var(--button-padding-y) var(--button-padding-x);
+  border-radius: 10rem;
+  overflow: hidden;
+  background-color: var(--bg-color);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--duration) var(--timing-function);
+  flex-grow: 1;
+}
+
+.button:after {
+  content: '\e90e';
+  font-family: 'iconfont';
+  font-size: var(--icon-size-xs);
+  line-height: 1;
+  height: var(--button-height);
+  aspect-ratio: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--bg-color);
+  overflow: hidden;
+}
+
+.button:before {
+  content: '';
+  order: 2;
+  width: var(--button-height);
+  aspect-ratio: 1;
+  flex-shrink: 0;
+  transition: width var(--duration) var(--timing-function);
+}
+
+html.no-touchevents .button:hover span {
+  padding-right: calc(var(--button-height) + var(--button-padding-x));
+}
+
+html.no-touchevents .button:hover::before {
+  width: 0;
 }
 
 .link-overlay {
@@ -629,8 +680,8 @@ html.no-touchevents .underline-hover:hover::before {
 
 /* HAMBURGER ====================*/
 .hamburger {
-  --hamburger-size: 1.6rem;
-  --hamburger-stroke-width: 0.1rem;
+  --hamburger-size: 2rem;
+  --hamburger-stroke-width: 0.15rem;
   --rgb: var(--color-white-rgb);
   position: relative;
   display: block;
@@ -652,6 +703,7 @@ html.no-touchevents .underline-hover:hover::before {
   position: absolute;
   width: 100%;
   height: var(--hamburger-stroke-width);
+  border-radius: 0.1rem;
   background: rgba(var(--rgb), 1);
   opacity: 1;
   left: 0;
