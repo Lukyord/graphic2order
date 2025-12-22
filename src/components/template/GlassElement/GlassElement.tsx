@@ -1,7 +1,7 @@
 'use client'
 
 import { CSSProperties, ReactNode, useCallback, useEffect, useState } from 'react'
-import { getDisplacementFilter, DisplacementOptions } from './getDisplacementFilter'
+import { getDisplacementFilter } from './getDisplacementFilter'
 import { getDisplacementMap } from './getDisplacementMap'
 
 type SizeValue = number | string
@@ -85,7 +85,7 @@ export const GlassElement = ({
   widthMb,
   heightMb,
   radiusMb,
-  depth: baseDepth,
+  depth,
   children,
   strength,
   chromaticAberration,
@@ -104,7 +104,6 @@ export const GlassElement = ({
 }: GlassElementProps) => {
   /* Change element depth on click */
   const [clicked, setClicked] = useState(false)
-  const [mounted, setMounted] = useState(false)
   const [isSafari, setIsSafari] = useState(false)
 
   /* Drag functionality */
@@ -220,7 +219,6 @@ export const GlassElement = ({
         CSS.supports('backdrop-filter', 'blur(1px)') ||
         CSS.supports('-webkit-backdrop-filter', 'blur(1px)')
     } catch (e) {
-      // CSS.supports might not be available in some environments
       supportsBackdropFilter = false
     }
 
@@ -246,7 +244,6 @@ export const GlassElement = ({
 
   // Update values after mount and on resize
   useEffect(() => {
-    setMounted(true)
     const checkMobile = () => {
       setValues(getCurrentValues(true))
     }
@@ -327,7 +324,6 @@ export const GlassElement = ({
       setElementStartPos({ top: topPx, left: leftPx })
     }
 
-    // Set clicked state for depth change (will be cancelled if drag occurs)
     setClicked(true)
   }
 
@@ -404,8 +400,6 @@ export const GlassElement = ({
       window.removeEventListener('mouseup', handleMouseUp)
     }
   }, [isDragging, dragStartPos, elementStartPos, currentPosition, dragThreshold, hasMoved])
-
-  let depth = baseDepth / (clicked ? 0.7 : 1)
 
   /* Dynamic CSS properties */
   const backdropFilterValue = `blur(${blur / 2}px) url('${getDisplacementFilter({
