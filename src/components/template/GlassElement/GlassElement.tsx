@@ -103,7 +103,6 @@ export const GlassElement = ({
   },
 }: GlassElementProps) => {
   /* Change element depth on click */
-  const [clicked, setClicked] = useState(false)
   const [isSafari, setIsSafari] = useState(false)
 
   /* Drag functionality */
@@ -299,7 +298,7 @@ export const GlassElement = ({
   }
 
   // Track potential drag start
-  const [dragThreshold, setDragThreshold] = useState(5) // pixels to move before considering it a drag
+  const dragThreshold = 5
   const [hasMoved, setHasMoved] = useState(false)
 
   // Handle mouse down - prepare for potential drag or click
@@ -323,8 +322,6 @@ export const GlassElement = ({
 
       setElementStartPos({ top: topPx, left: leftPx })
     }
-
-    setClicked(true)
   }
 
   // Handle drag
@@ -343,7 +340,6 @@ export const GlassElement = ({
         // Start dragging
         setIsDragging(true)
         setHasMoved(true)
-        setClicked(false) // Cancel click if dragging
         document.body.style.cursor = 'grabbing'
         document.body.style.userSelect = 'none'
       }
@@ -380,11 +376,6 @@ export const GlassElement = ({
     }
 
     const handleMouseUp = () => {
-      // If we dragged, don't trigger click
-      if (hasMoved || isDragging) {
-        setClicked(false)
-      }
-
       setIsDragging(false)
       setHasMoved(false)
       setDragStartPos(null)
@@ -436,13 +427,7 @@ export const GlassElement = ({
     style.boxShadow = 'none'
   }
 
-  const handleMouseUp = () => {
-    // Only reset clicked if it wasn't a drag
-    if (!hasMoved && !isDragging) {
-      // Small delay to allow click to complete
-      setTimeout(() => setClicked(false), 100)
-    }
-  }
+  const handleMouseUp = () => {}
 
   return (
     <div
