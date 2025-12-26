@@ -5,6 +5,10 @@
 
 /* ELEMENT ====================*/
 /* LIQUID GLASS */
+.draggable {
+  z-index: 100;
+}
+
 .liquid-glass {
   background: transparent;
   box-shadow:
@@ -13,11 +17,11 @@
     inset 0 1px 0 rgba(var(--color-white-rgb), 0.5),
     inset 0 -1px 0 rgba(var(--color-white-rgb), 0.1),
     inset 0 0 2px 1px rgba(var(--color-white-rgb), 0.2);
-  cursor: pointer;
-  position: absolute;
-  top: var(--pc-top);
-  left: var(--pc-left);
   z-index: 100;
+  /* Use PC values by default */
+  width: var(--width-pc);
+  height: var(--height-pc);
+  border-radius: var(--radius-pc);
 }
 
 /* 1️⃣ Organic drift (soft, floating) */
@@ -75,15 +79,15 @@
   }
 }
 
-.liquid-glass[data-animation='1'] {
+.draggable[data-animation='1'] {
   animation: move-random-1 15s infinite;
 }
 
-.liquid-glass[data-animation='2'] {
+.draggable[data-animation='2'] {
   animation: move-random-2 15s infinite;
 }
 
-.liquid-glass[data-animation='3'] {
+.draggable[data-animation='3'] {
   animation: move-random-3 15s infinite;
 }
 

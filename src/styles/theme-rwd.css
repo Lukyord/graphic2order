@@ -15,8 +15,10 @@
   /* ELEMENT ====================*/
   /* LIQUID GLASS */
   .liquid-glass {
-    top: var(--mb-top);
-    left: var(--mb-left);
+    /* Use mobile values on small screens */
+    width: var(--width-mb);
+    height: var(--height-mb);
+    border-radius: var(--radius-mb);
   }
 
   /* SECTION TITLE TEXT */

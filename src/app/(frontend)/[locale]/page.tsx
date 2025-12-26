@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { SplitTextComponent } from '@/components/common/split-text'
 import AnimateOnScroll from '@/components/common/animate-on-scroll'
 import { GlassElement } from '@/components/template/GlassElement/GlassElement'
+import { Draggable } from '@/components/template/Draggable/Draggable'
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -14,40 +15,47 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
   return (
     <main id="main" className="index-page">
+      {/* HERO */}
       <section data-section="homepage-hero" className="header-padding">
         <div className="sc-inner pc-t-150 pc-b-150">
           <div className="container" style={{ position: 'relative' }}>
-            <GlassElement
-              width="21vw"
-              height="21vw"
-              radius="50%"
-              widthMb="31vw"
-              heightMb="31vw"
-              radiusMb="50%"
-              depth={10}
-              blur={2}
-              chromaticAberration={2}
-              debug={false}
-              animation={3}
+            <Draggable
               pcPosition={{ top: '25%', left: '10%' }}
               mbPosition={{ top: '20%', left: '0%' }}
-            />
+              animation={3}
+            >
+              <GlassElement
+                width="300px"
+                height="300px"
+                radius="50%"
+                widthMb="120px"
+                heightMb="120px"
+                radiusMb="50%"
+                depth={10}
+                blur={2}
+                chromaticAberration={1}
+                debug={false}
+              />
+            </Draggable>
 
-            <GlassElement
-              width="14vw"
-              height="14vw"
-              radius="50%"
-              widthMb="21vw"
-              heightMb="21vw"
-              radiusMb="50%"
-              depth={12}
-              blur={4}
-              chromaticAberration={1}
-              debug={false}
-              animation={2}
+            <Draggable
               pcPosition={{ top: '-2%', left: '59%' }}
               mbPosition={{ top: '-2%', left: '75%' }}
-            />
+              animation={2}
+            >
+              <GlassElement
+                width="200px"
+                height="200px"
+                radius="50%"
+                widthMb="80px"
+                heightMb="80px"
+                radiusMb="50%"
+                depth={12}
+                blur={4}
+                chromaticAberration={1}
+                debug={false}
+              />
+            </Draggable>
 
             <div className="sc-title-text">
               <SplitTextComponent
@@ -120,6 +128,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         </div>
       </section>
 
+      {/* ABOUT */}
       <section style={{ height: '100vh' }}></section>
     </main>
   )

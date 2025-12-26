@@ -19,6 +19,7 @@ import Header from '@/components/header/Header'
 import Theme from '@/components/theme'
 import LenisProvider from '@/components/LenisProvider'
 import CursorFollower from '@/components/common/cursor-follower'
+import { SafariProvider } from '@/app/context/SafariContext'
 
 const prompt = Prompt({
   subsets: ['latin'],
@@ -51,16 +52,18 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale}>
       <NextIntlClientProvider>
-        <LenisProvider>
-          <body className={`${prompt.variable}`}>
-            <div id="page">
-              <Header />
-              <Theme />
-              <CursorFollower />
-              {children}
-            </div>
-          </body>
-        </LenisProvider>
+        <SafariProvider>
+          <LenisProvider>
+            <body className={`${prompt.variable}`}>
+              <div id="page">
+                <Header />
+                <Theme />
+                <CursorFollower />
+                {children}
+              </div>
+            </body>
+          </LenisProvider>
+        </SafariProvider>
       </NextIntlClientProvider>
     </html>
   )
