@@ -466,6 +466,10 @@ export interface HomepageSetting {
      */
     partnersCount?: string | null;
   };
+  /**
+   * The works to display on the homepage
+   */
+  featuredWorks?: (number | Work)[] | null;
   meta?: {
     title?: string | null;
     description?: string | null;
@@ -611,6 +615,7 @@ export interface HomepageSettingsSelect<T extends boolean = true> {
         projectsCount?: T;
         partnersCount?: T;
       };
+  featuredWorks?: T;
   meta?:
     | T
     | {
