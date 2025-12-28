@@ -8,6 +8,7 @@ import { getViewportPosition } from './getViewportPosition'
 import { calculateDistance } from './calculateDistance'
 import { DEFAULT_POSITION, normalizePosition } from './normalizePosition'
 import { Position, PositionState } from './drag-type'
+import { useSafari } from '@/app/context/SafariContext'
 
 type DraggableProps = {
   children: ReactNode
@@ -40,6 +41,7 @@ export function Draggable({
     pc: normalizePosition(pcPosition),
     mb: normalizePosition(mbPosition),
   }))
+  const { isSafari } = useSafari()
 
   const positionRef = useRef(currentPosition)
   const elementRef = useRef<HTMLDivElement>(null)
@@ -281,6 +283,7 @@ export function Draggable({
     <div
       ref={elementRef}
       className={`draggable hover ${className}`}
+      data-safari={isSafari}
       style={style}
       onMouseDown={handleMouseDown}
       data-animation={animation !== 0 ? animation : undefined}

@@ -1,7 +1,8 @@
 {
   "General": {
     "Button": {
-      "get-in-touch": "Get In Touch"
+      "get-in-touch": "Get In Touch",
+      "explore": "Explore"
     }
   },
   "Header": {
@@ -13,6 +14,15 @@
     }
   },
   "Homepage": {
-    "hero-desc": "Graphic2order is a creative studio specializing in Logo, CI Stationary, and packaging. We believe powerful design goes beyond aesthetics. By combining creativity with technology, we deliver solutions that make brands unforgettable."
+    "hero-desc": "Graphic2order is a creative studio specializing in Logo, CI Stationary, and packaging. We believe powerful design goes beyond aesthetics. By combining creativity with technology, we deliver solutions that make brands unforgettable.",
+    "about-cta": {
+      "about-desc": "We believe powerful design is not just about looking good, but about creating meaning, consistency, and impact. By combining strategic thinking, creativity, and technology, we help brands communicate clearly and stand out in a competitive world.",
+      "about-projects-desc": "From startups to established brands, we've delivered numerous creative projects—each crafted with purpose, precision, and a deep understanding of brand identity.",
+      "about-project": "Projects",
+      "about-partners-desc": "We've collaborated with clients and partners across multiple industries, building long-term relationships based on trust, creativity, and consistent results.",
+      "about-partner": "Partners",
+      "about-est-desc": "With our extensive experience in the creative industry, we bring experience, insight, and adaptability to every project—growing alongside our clients' brands.",
+      "about-est": "Est. Since"
+    }
   }
 }

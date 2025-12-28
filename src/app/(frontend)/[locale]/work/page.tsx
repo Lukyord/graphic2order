@@ -1,5 +1,5 @@
 import React from 'react'
 
 export default function WorkPage() {
-  return <div></div>
+  return <div>Work</div>
 }
