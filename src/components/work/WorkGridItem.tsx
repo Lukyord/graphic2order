@@ -4,6 +4,7 @@ import { getTranslations } from 'next-intl/server'
 
 import RenderMedia from '../common/media'
 import { LexicalToHTML } from '../common/lexicaltoHTML'
+import AnimateOnScroll from '../common/animate-on-scroll'
 
 type WorkGridItemProps = {
     work: Work
@@ -19,7 +20,7 @@ export default async function WorkGridItem({ work }: WorkGridItemProps) {
             data-fancybox={`work-${work.id}`}
             data-src={`#work-fancybox-${work.id}`}
         >
-            <div className="card-media">
+            <AnimateOnScroll triggerClass="fadeIn" className="card-media">
                 <div className="media-hover-ttl">
                     <h3>{work.title}</h3>
                 </div>
@@ -27,7 +28,7 @@ export default async function WorkGridItem({ work }: WorkGridItemProps) {
                     src={(work.mainMedia as Media)?.url}
                     alt={(work.mainMedia as Media)?.alt}
                 />
-            </div>
+            </AnimateOnScroll>
 
             <div
                 id={`work-fancybox-${work.id}`}

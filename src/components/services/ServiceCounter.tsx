@@ -3,7 +3,10 @@
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
 import { onWindowResize } from '@/utils/utils'
+
+import AnimateOnScroll from '../common/animate-on-scroll'
 
 if (typeof window !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger)
@@ -92,7 +95,6 @@ export default function ServiceCounter({ totalServices }: ServiceCounterProps) {
                     // Initial setup without animation
                     gsap.set(strip1, { y: `0` })
                     gsap.set(strip2, { y: `-${parsedFontSize}` })
-                    console.log('initial set', digit1, digit2)
                     isInitialized.current = true
                 } else {
                     // Animate to new value
@@ -113,7 +115,7 @@ export default function ServiceCounter({ totalServices }: ServiceCounterProps) {
 
     return (
         <div ref={counterRef} className="service-counter">
-            <div className="counter-digits">
+            <AnimateOnScroll triggerClass="fadeIn" className="counter-digits">
                 <div ref={digit1WrapperRef} className="digit-wrapper">
                     <div className="digit-strip">
                         {Array.from({ length: 10 }, (_, i) => (
@@ -132,7 +134,7 @@ export default function ServiceCounter({ totalServices }: ServiceCounterProps) {
                         ))}
                     </div>
                 </div>
-            </div>
+            </AnimateOnScroll>
         </div>
     )
 }

@@ -224,7 +224,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                         </div>
 
                         <div className="about-stats-container">
-                            <div className="about-stat-card">
+                            <AnimateOnScroll triggerClass="fadeIn" className="about-stat-card">
                                 <div className="stat">
                                     <span className="size-h1">
                                         {homepageSettings.about?.projectsCount || 0}
@@ -237,9 +237,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                                 <div className="stat-desc">
                                     <p>{tHomepage('about-cta.about-projects-desc')}</p>
                                 </div>
-                            </div>
+                            </AnimateOnScroll>
 
-                            <div className="about-stat-card">
+                            <AnimateOnScroll triggerClass="fadeIn" className="about-stat-card">
                                 <div className="stat">
                                     <span className="size-h1">
                                         {homepageSettings.about?.partnersCount || 0}
@@ -252,9 +252,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                                 <div className="stat-desc">
                                     <p>{tHomepage('about-cta.about-partners-desc')}</p>
                                 </div>
-                            </div>
+                            </AnimateOnScroll>
 
-                            <div className="about-stat-card">
+                            <AnimateOnScroll triggerClass="fadeIn" className="about-stat-card">
                                 <div className="stat">
                                     <span className="size-h1">2025</span>
                                     <span className="size-h4">
@@ -265,7 +265,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                                 <div className="stat-desc">
                                     <p>{tHomepage('about-cta.about-est-desc')}</p>
                                 </div>
-                            </div>
+                            </AnimateOnScroll>
                         </div>
 
                         <div className="block-content-start hidden-device-md">
@@ -290,14 +290,14 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 <div className="sc-inner pc-t-150 pc-b-150 mb-t-100 mb-b-100">
                     <div className="container">
                         <div className="sc-header">
-                            <div className="sc-ttl">
+                            <AnimateOnScroll triggerClass="fadeIn" className="sc-ttl">
                                 <h2 className="size-h0">WORK</h2>
-                            </div>
+                            </AnimateOnScroll>
 
-                            <div className="work-time-range">
+                            <AnimateOnScroll triggerClass="fadeIn" className="work-time-range">
                                 <span>{tHomepage('featured-works.selected-works')}</span>
                                 <span>{getYearRange()}</span>
-                            </div>
+                            </AnimateOnScroll>
                         </div>
 
                         <HorizontalMarquee speed={50} direction="left">

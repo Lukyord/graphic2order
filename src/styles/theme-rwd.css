@@ -227,6 +227,27 @@
     }
 
     /* FOOTER */
+    #footer {
+        padding: var(--spacing-xl) var(--spacing-container);
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        gap: var(--spacing-xl);
+    }
+
+    .footer-logo {
+        width: 100%;
+    }
+
+    .footer-info {
+        width: 100%;
+        gap: var(--spacing-2lg);
+    }
+
+    .footer-info .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
     /* PAGE */
     /* PAGE: INDEX */

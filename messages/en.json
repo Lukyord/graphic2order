@@ -18,6 +18,16 @@
             "about": "About Us"
         }
     },
+    "Footer": {
+        "contact-us": "Contact Us",
+        "address": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
+        "email": "Email",
+        "phone": "Phone",
+        "facebook": "Facebook",
+        "instagram": "Instagram",
+        "line": "Line",
+        "tiktok": "Tiktok"
+    },
     "Homepage": {
         "hero-desc": "Graphic2order is a creative studio specializing in Logo, CI Stationary, and packaging. We believe powerful design goes beyond aesthetics. By combining creativity with technology, we deliver solutions that make brands unforgettable.",
         "about-cta": {
