@@ -3,17 +3,28 @@ import { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 
 import { generateMeta } from '@/lib/generateMeta'
+import { getWorkTypes } from '@/payload/services/workTypes'
+import { getHomepageSettings } from '@/payload/services/homepageSettings'
+import { Work } from '@/payload-types'
+import { Locale } from '@/i18n/routing'
 
 import { SplitTextComponent } from '@/components/common/split-text'
 import AnimateOnScroll from '@/components/common/animate-on-scroll'
 import { GlassElement } from '@/components/template/GlassElement/GlassElement'
 import { Draggable } from '@/components/template/Draggable/Draggable'
-import { getHomepageSettings } from '@/payload/services/homepageSettings'
+import HorizontalMarquee from '@/components/common/horizontal-marquee'
+import WorkGridItem from '@/components/work/WorkGridItem'
+import FancyboxGallery from '@/components/template/FancyboxGallery'
 
 export const dynamic = 'force-dynamic'
 
-export async function generateMetadata(): Promise<Metadata> {
-    const siteSettings = await getHomepageSettings()
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+    const { locale } = await params
+    const siteSettings = await getHomepageSettings(locale as Locale)
 
     return generateMeta({
         meta: siteSettings.meta,
@@ -24,10 +35,36 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     const { locale } = await params
     setRequestLocale(locale)
 
-    const homepageSettings = await getHomepageSettings()
-
     const tHomepage = await getTranslations('Homepage')
     const tGeneralButton = await getTranslations('General.Button')
+
+    // HOMEPAGE SETTINGS ================================
+    const homepageSettings = await getHomepageSettings(locale as Locale)
+    const featuredWorks = (homepageSettings.featuredWorks as Work[]) || []
+
+    // Calculate year range from featured works
+    const getYearRange = () => {
+        const years = featuredWorks
+            .filter((work): work is Exclude<typeof work, number> => typeof work !== 'number')
+            .map((work) => work.date)
+            .filter((date): date is string => Boolean(date))
+            .map((date) => new Date(date).getFullYear())
+
+        if (years.length === 0) return 'Present'
+
+        const oldestYear = Math.min(...years)
+        const newestYear = Math.max(...years)
+        const currentYear = new Date().getFullYear()
+
+        if (newestYear === currentYear) {
+            return `${oldestYear} - Present`
+        }
+
+        return `${oldestYear} - ${newestYear}`
+    }
+
+    // WORK TYPES ================================
+    const workTypes = await getWorkTypes()
 
     return (
         <main id="main" className="index-page">
@@ -256,9 +293,36 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                             </div>
 
                             <div className="work-time-range">
-                                <span>2025</span>
-                                <span>(2022 - Present)</span>
+                                <span>{tHomepage('featured-works.selected-works')}</span>
+                                <span>{getYearRange()}</span>
                             </div>
+                        </div>
+
+                        <HorizontalMarquee speed={50} direction="left">
+                            <div className="work-type-marquee">
+                                {workTypes.map((workType) => (
+                                    <div key={workType.id} className="work-type-item">
+                                        <span>{workType.name}</span>
+                                        <span>·</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </HorizontalMarquee>
+
+                        <FancyboxGallery
+                            className="work-collection-grid"
+                            fancyboxClass="work-fancybox"
+                        >
+                            {featuredWorks.map((work) => (
+                                <WorkGridItem key={work.id} work={work} />
+                            ))}
+                        </FancyboxGallery>
+
+                        <div className="sc-cta">
+                            <p className="size-h3">Explore our creative track record</p>
+                            <Link href="/work" className="button">
+                                <span>{tGeneralButton('view-all-portfolio')}</span>
+                            </Link>
                         </div>
                     </div>
                 </div>

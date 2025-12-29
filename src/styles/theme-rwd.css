@@ -13,6 +13,60 @@
     /* SECTION ====================*/
 
     /* ELEMENT ====================*/
+    /* WORK GRID */
+    .work-collection-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xs);
+    }
+
+    [data-card='work-grid'].horizontal,
+    [data-card='work-grid'].square {
+        grid-column: span 1;
+    }
+
+    .fancybox__container .fancybox__slide.has-html {
+        padding-top: var(--spacing-4xl);
+    }
+
+    .work-fancybox-content {
+        width: calc(100% - var(--spacing-container) * 2);
+        height: auto;
+    }
+
+    .work-fancybox-content .content-inner {
+        flex-direction: column-reverse;
+        gap: var(--spacing-2lg);
+    }
+
+    .work-fancybox-content .content-gallery {
+        width: 100%;
+    }
+
+    .work-fancybox-content .content-text {
+        padding-top: 0;
+    }
+
+    .work-fancybox-content .content-text .content-ttl {
+        margin-bottom: var(--spacing-2lg);
+    }
+
+    .work-fancybox-content .content-text .content-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: unset;
+    }
+
+    .work-fancybox-content .content-grid .grid-item:is(:nth-child(3), :nth-child(4)) {
+        grid-column: span 1;
+    }
+
+    .work-fancybox-content .content-grid .grid-item .item-subttl {
+        margin-bottom: var(--spacing-6xs);
+    }
+
+    .work-fancybox-content .content-grid .grid-item .work-type-tag {
+        padding: var(--spacing-5xs) var(--spacing-2xs);
+    }
+
     /* LIQUID GLASS */
     .liquid-glass {
         /* Use mobile values on small screens */
@@ -162,5 +216,16 @@
 
     [data-section='about-cta'] .about-stat-card {
         padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    /* FEATURED WORKS */
+    [data-section='featured-works'] {
+        --content-gap: var(--spacing-2lg);
+    }
+
+    [data-section='featured-works'] .sc-cta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-2sm);
     }
 }
