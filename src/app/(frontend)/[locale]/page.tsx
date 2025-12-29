@@ -16,6 +16,7 @@ import HorizontalMarquee from '@/components/common/horizontal-marquee'
 import WorkGridItem from '@/components/work/WorkGridItem'
 import FancyboxGallery from '@/components/template/FancyboxGallery'
 import ServicesSection from '@/components/services/ServicesSection'
+import CtaSection from '@/components/template/CtaSection'
 
 export const dynamic = 'force-dynamic'
 
@@ -332,7 +333,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             {/* SERVICES */}
             <ServicesSection locale={locale as Locale} />
 
-            <section style={{ height: '100vh' }}></section>
+            {/* CTA */}
+            <CtaSection locale={locale as Locale} />
         </main>
     )
 }
