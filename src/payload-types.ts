@@ -240,6 +240,10 @@ export interface Work {
    */
   mainMedia?: (number | null) | Media;
   /**
+   * The media to display when hovering over the work in the list
+   */
+  listHoverMedia?: (number | null) | Media;
+  /**
    * The gallery of the work
    */
   gallery?: (number | Media)[] | null;
@@ -371,6 +375,7 @@ export interface WorkSelect<T extends boolean = true> {
   date?: T;
   content?: T;
   mainMedia?: T;
+  listHoverMedia?: T;
   gallery?: T;
   updatedAt?: T;
   createdAt?: T;
