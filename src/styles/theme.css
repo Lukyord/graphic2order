@@ -2,6 +2,116 @@
 /* DEFAULT ====================*/
 
 /* SECTION ====================*/
+/* SERVICES */
+[data-section='services'] {
+    --gap: max(20rem, 13.8888888889vw);
+}
+
+[data-section='services'] .sc-inner {
+    padding-bottom: var(--gap);
+    border-bottom: 1px solid rgba(var(--color-white-rgb), 0.5);
+}
+
+[data-section='services'] .sc-header,
+[data-section='services'] .content {
+    display: flex;
+    position: relative;
+}
+
+[data-section='services'] .sc-header .sc-ttl,
+[data-section='services'] .sc-header .services-list,
+[data-section='services'] .content .service-counter,
+[data-section='services'] .content .service-items-container {
+    width: 50%;
+}
+
+[data-section='services'] .service-counter {
+    position: sticky;
+    top: var(--header-height);
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    margin-top: var(--gap);
+    font-size: 14.5833333333vw;
+    color: rgba(var(--color-white-rgb), 0.5);
+    line-height: 1;
+}
+
+[data-section='services'] .service-counter .counter-digits {
+    display: flex;
+}
+
+[data-section='services'] .service-counter .digit-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 1em;
+    display: inline-block;
+}
+
+[data-section='services'] .service-counter .digit-strip {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+[data-section='services'] .service-counter .digit-item {
+    height: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+[data-section='services'] .sc-header .sc-ttl > .size-h0 {
+    line-height: 0.9 !important;
+}
+
+[data-section='services'] .sc-header .services-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2xs);
+}
+
+[data-section='services'] .sc-header .services-list .list-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-5xs);
+}
+
+[data-section='services'] .sc-header .services-list .list-item .count {
+    width: 3.2rem;
+    color: rgba(var(--color-white-rgb), 0.5);
+}
+
+[data-section='services'] .service-items-container {
+    margin-top: var(--gap);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+[data-section='services'] .service-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2xs);
+    padding-bottom: var(--gap);
+    border-bottom: 1px solid rgba(var(--color-white-rgb), 0.5);
+}
+
+[data-section='services'] .service-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+[data-section='services'] .service-item .item-ttl {
+    text-wrap: balance;
+    font-size: var(--font-size-h1);
+    line-height: var(--line-height-h1);
+}
+
+[data-section='services'] .service-item .item-desc {
+    max-width: 60.3rem;
+}
 
 /* ELEMENT ====================*/
 /* WORK GRID */
@@ -564,7 +674,6 @@ html.no-touchevents [data-card='work-grid']:hover .card-media .media-hover-ttl {
 [data-section='featured-works'] .sc-cta {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: var(--spacing-3xs);
     margin-top: var(--content-gap);
 }

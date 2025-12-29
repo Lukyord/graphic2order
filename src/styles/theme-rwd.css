@@ -11,6 +11,46 @@
     /* DEFAULT ====================*/
 
     /* SECTION ====================*/
+    /* SERVICES */
+    [data-section='services'] {
+        --gap: var(--spacing-xl);
+    }
+    [data-section='services'] .sc-header {
+        flex-direction: column;
+        gap: var(--spacing-2lg);
+    }
+
+    [data-section='services'] .sc-header .sc-ttl,
+    [data-section='services'] .sc-header .services-list {
+        width: 100%;
+    }
+
+    [data-section='services'] .content .service-counter {
+        width: auto;
+        flex-shrink: 0;
+    }
+    [data-section='services'] .content .service-items-container {
+        width: 69.2737430168%;
+    }
+
+    [data-section='services'] .sc-header .services-list {
+        gap: var(--spacing-5xs);
+        font-size: var(--font-size-h5);
+        line-height: var(--line-height-h5);
+    }
+
+    [data-section='services'] .content {
+        justify-content: space-between;
+    }
+
+    [data-section='services'] .service-counter {
+        font-size: var(--font-size-h1);
+    }
+
+    [data-section='services'] .service-item .item-ttl {
+        font-size: var(--font-size-h3);
+        line-height: var(--line-height-h3);
+    }
 
     /* ELEMENT ====================*/
     /* WORK GRID */

@@ -331,6 +331,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
             {/* SERVICES */}
             <ServicesSection locale={locale as Locale} />
+
+            <section style={{ height: '100vh' }}></section>
         </main>
     )
 }
