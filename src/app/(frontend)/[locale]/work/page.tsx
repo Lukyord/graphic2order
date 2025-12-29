@@ -1,5 +1,5 @@
-import React from 'react'
+export const dynamic = 'force-dynamic'
 
 export default function WorkPage() {
-  return <div>Work</div>
+    return <div>Work</div>
 }

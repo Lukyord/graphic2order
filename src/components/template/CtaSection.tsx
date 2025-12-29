@@ -6,11 +6,7 @@ import { SplitTextComponent } from '../common/split-text'
 import { Draggable } from './Draggable/Draggable'
 import { GlassElement } from './GlassElement/GlassElement'
 
-type CtaSectionProps = {
-    locale: Locale
-}
-
-export default async function CtaSection({ locale }: CtaSectionProps) {
+export default async function CtaSection() {
     const tGeneralButton = await getTranslations('General.Button')
     const tCta = await getTranslations('Cta')
 

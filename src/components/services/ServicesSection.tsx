@@ -40,7 +40,7 @@ export default async function ServicesSection({ locale }: ServicesSectionProps) 
                         <ServiceCounter totalServices={servicesCount} />
 
                         <div className="service-items-container">
-                            {siteSettings.services?.map((service, index) => (
+                            {siteSettings.services?.map((service) => (
                                 <AnimateOnScroll
                                     triggerClass="fadeIn"
                                     key={service.id}

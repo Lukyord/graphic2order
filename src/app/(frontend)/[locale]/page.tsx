@@ -334,7 +334,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <ServicesSection locale={locale as Locale} />
 
             {/* CTA */}
-            <CtaSection locale={locale as Locale} />
+            <CtaSection />
         </main>
     )
 }
