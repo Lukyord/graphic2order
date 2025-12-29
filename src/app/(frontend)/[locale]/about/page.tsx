@@ -1,10 +1,5 @@
-import { setRequestLocale } from 'next-intl/server'
+import React from 'react'
 
-export const dynamic = 'force-dynamic'
-
-export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
-    const { locale } = await params
-    setRequestLocale(locale)
-
+export default function AboutPage() {
     return <div>About</div>
 }
