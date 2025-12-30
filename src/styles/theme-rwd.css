@@ -366,4 +366,35 @@
         flex-direction: column;
         gap: var(--spacing-sm);
     }
+
+    /* PAGE: NOT FOUND */
+    /* NOT FOUND */
+
+    [data-section='not-found'] .no-found-content {
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    [data-section='not-found'] .sc-title-text > .vw-ttl {
+        margin-top: 0;
+        font-size: 23.07692307692vw;
+    }
+
+    [data-section='not-found'] .sc-title-text > .vw-ttl:last-child {
+        text-align: center;
+    }
+
+    [data-section='not-found'] .sc-subttl {
+        max-width: 70.2564102564vw;
+        font-size: 7.6923076923vw;
+        position: static;
+        animation: fadeIn 0.5s ease-in-out 0.5s forwards;
+    }
+
+    [data-section='not-found'] .not-found-cta {
+        margin-top: 4.5128205128vw;
+        align-self: center;
+        font-size: 6.1538461538vw;
+        padding: 3.07692307692vw 6.1538461538vw;
+    }
 }

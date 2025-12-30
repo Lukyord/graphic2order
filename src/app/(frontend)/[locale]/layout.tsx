@@ -21,6 +21,7 @@ import Theme from '@/components/theme'
 import LenisProvider from '@/components/LenisProvider'
 import CursorFollower from '@/components/common/cursor-follower'
 import Footer from '@/components/footer/Footer'
+import FooterWrapper from '@/components/footer/FooterWrapper'
 
 const prompt = Prompt({
     subsets: ['latin'],
@@ -33,7 +34,7 @@ export function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-    title: 'Graphic 2 Order',
+    title: 'Graphic2Order',
     description: 'Graphic 2 Order',
 }
 
@@ -61,7 +62,9 @@ export default async function LocaleLayout({ children, params }: Props) {
                                 <Theme />
                                 <CursorFollower />
                                 {children}
-                                <Footer locale={locale as Locale} />
+                                <FooterWrapper>
+                                    <Footer locale={locale as Locale} />
+                                </FooterWrapper>
                             </div>
                         </body>
                     </LenisProvider>

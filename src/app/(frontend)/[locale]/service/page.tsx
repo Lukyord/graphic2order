@@ -112,21 +112,13 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
 
                         <div className="hero-desc">
                             <div className="block-content-start">
-                                <AnimateOnScroll
-                                    className="block-desc"
-                                    triggerClass="fadeEntry"
-                                    delay={600}
-                                >
+                                <AnimateOnScroll className="block-desc" triggerClass="fadeEntry">
                                     <p>{tService('service-hero-desc-1')}</p>
                                 </AnimateOnScroll>
                             </div>
 
                             <div className="block-content-start">
-                                <AnimateOnScroll
-                                    className="block-desc"
-                                    triggerClass="fadeEntry"
-                                    delay={700}
-                                >
+                                <AnimateOnScroll className="block-desc" triggerClass="fadeEntry">
                                     <p>{tService('service-hero-desc-2')}</p>
                                 </AnimateOnScroll>
                             </div>
