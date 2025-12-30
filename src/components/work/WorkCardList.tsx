@@ -1,6 +1,4 @@
-import Link from 'next/link'
-
-import { Media, Work, WorkType } from '@/payload-types'
+import { Media, Work } from '@/payload-types'
 
 import RenderMedia from '../common/media'
 import AnimateOnScroll from '../common/animate-on-scroll'

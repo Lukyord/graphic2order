@@ -11,8 +11,6 @@ type WorkGridItemProps = {
 }
 
 export default async function WorkGridItem({ work }: WorkGridItemProps) {
-    const tWork = await getTranslations('Work.work-item')
-
     return (
         <div
             className={`card hover-view ${work.orientation.toLocaleLowerCase()}`}

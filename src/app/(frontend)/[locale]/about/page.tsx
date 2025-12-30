@@ -71,7 +71,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                                     animateOnScroll={true}
                                     scrollStart="top bottom"
                                 >
-                                    We Don't Just Design
+                                    We Don&apos;t Just Design
                                 </SplitTextComponent>
 
                                 <SplitTextComponent

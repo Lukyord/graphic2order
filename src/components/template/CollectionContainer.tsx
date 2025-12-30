@@ -17,7 +17,6 @@ type FilterOption = {
 
 type CollectionItem = {
     id: number | string
-    [key: string]: any
 }
 
 type CollectionContainerProps<T extends CollectionItem, TOption extends FilterOption> = {
@@ -79,6 +78,10 @@ export default function CollectionContainer<
 
         return items.filter((item) => {
             const itemType = item[typeKey]
+
+            if (!Array.isArray(itemType)) {
+                return false
+            }
 
             return itemType.some((type: TOption | number) => {
                 if (typeof type === 'object' && type !== null) {
