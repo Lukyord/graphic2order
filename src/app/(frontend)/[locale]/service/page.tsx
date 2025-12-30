@@ -1,36 +1,25 @@
-import { getWorks } from '@/payload/services/works'
-import { getWorkTypes } from '@/payload/services/workTypes'
-
-import { Locale } from '@/i18n/routing'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 
-import CollectionContainer from '@/components/template/CollectionContainer'
-import WorkGridItem from '@/components/work/WorkGridItem'
-import { SplitTextComponent } from '@/components/common/split-text'
+import { Locale } from '@/i18n/routing'
+
 import AnimateOnScroll from '@/components/common/animate-on-scroll'
+import { SplitTextComponent } from '@/components/common/split-text'
 import { Draggable } from '@/components/template/Draggable/Draggable'
 import { GlassElement } from '@/components/template/GlassElement/GlassElement'
-import WorkCardList from '@/components/work/WorkCardList'
+import ServicesSection from '@/components/services/ServicesSection'
 
 export const dynamic = 'force-dynamic'
 
-const STORAGE_KEY = 'work-view-mode'
-
-export default async function WorkPage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function ServicePage({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params
     setRequestLocale(locale)
 
-    const tWork = await getTranslations('Work')
-
-    const works = await getWorks(locale as Locale)
-    const workTypes = await getWorkTypes()
+    const tService = await getTranslations('Service')
 
     return (
-        <main id="main" className="work-page">
-            <h1 className="visually-hidden">Graphic2order - Work Page</h1>
-
+        <main id="main" className="service-page">
             {/* HERO INFO */}
-            <section data-section="work-hero" className="header-padding">
+            <section data-section="service-hero" className="header-padding">
                 <div className="sc-inner pc-t-200 pc-b-200 mb-t-200 mb-b-200">
                     <div className="container">
                         <div className="sc-title-text-wrapper">
@@ -40,8 +29,8 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                                 animation={3}
                             >
                                 <GlassElement
-                                    width="300px"
-                                    height="300px"
+                                    width="200px"
+                                    height="200px"
                                     radius="50%"
                                     widthMb="120px"
                                     heightMb="120px"
@@ -84,7 +73,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                                     animateOnScroll={true}
                                     scrollStart="top bottom"
                                 >
-                                    Our Works Speak
+                                    Logos. Branding.
                                 </SplitTextComponent>
 
                                 <SplitTextComponent
@@ -100,37 +89,54 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                                     scrollStart="top bottom"
                                     delay={0.3}
                                 >
-                                    Louder Than Words
+                                    Packaging.
+                                </SplitTextComponent>
+
+                                <SplitTextComponent
+                                    as="h2"
+                                    className="vw-ttl"
+                                    type="chars,words"
+                                    from={{ y: '100%' }}
+                                    to={{ y: '0%' }}
+                                    duration={0.8}
+                                    stagger={0.01}
+                                    ease="power3.out"
+                                    animateOnScroll={true}
+                                    scrollStart="top bottom"
+                                    delay={0.5}
+                                >
+                                    All In One Place
                                 </SplitTextComponent>
                             </div>
                         </div>
 
-                        <div className="block-content-start">
-                            <AnimateOnScroll className="block-desc" triggerClass="fadeEntry">
-                                <p>{tWork('work-hero-desc')}</p>
-                            </AnimateOnScroll>
+                        <div className="hero-desc">
+                            <div className="block-content-start">
+                                <AnimateOnScroll
+                                    className="block-desc"
+                                    triggerClass="fadeEntry"
+                                    delay={600}
+                                >
+                                    <p>{tService('service-hero-desc-1')}</p>
+                                </AnimateOnScroll>
+                            </div>
+
+                            <div className="block-content-start">
+                                <AnimateOnScroll
+                                    className="block-desc"
+                                    triggerClass="fadeEntry"
+                                    delay={700}
+                                >
+                                    <p>{tService('service-hero-desc-2')}</p>
+                                </AnimateOnScroll>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* WORK */}
-            <CollectionContainer
-                items={works}
-                options={workTypes}
-                allLabel={tWork('work-filter-all')}
-                collectionClassName="work-collection"
-                typeKey="workTypes"
-                gridItems={works.map((work) => (
-                    <WorkGridItem key={work.id} work={work} />
-                ))}
-                listItems={works.map((work) => (
-                    <WorkCardList key={work.id} work={work} />
-                ))}
-                enableViewMode={true}
-                viewModeStorageKey={STORAGE_KEY}
-                enableScrollTrigger={true}
-            />
+            {/* SERVICES */}
+            <ServicesSection locale={locale as Locale} />
         </main>
     )
 }

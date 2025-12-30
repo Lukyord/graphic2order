@@ -351,4 +351,19 @@
     [data-section='work-hero'] [class*='block-content-'] {
         margin-top: var(--spacing-6xl);
     }
+
+    /* PAGE: SERVICE */
+    /* SERVICE HERO */
+    [data-section='service-hero'] .sc-title-text > .vw-ttl:nth-child(2) {
+        margin-left: 0%;
+    }
+    [data-section='service-hero'] .sc-title-text > .vw-ttl:nth-child(3) {
+        text-align: left;
+        text-wrap: balance;
+    }
+
+    [data-section='service-hero'] .hero-desc {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
 }

@@ -43,7 +43,7 @@ export default function ServiceCounter({ totalServices }: ServiceCounterProps) {
         serviceItems.forEach((item, index) => {
             const trigger = ScrollTrigger.create({
                 trigger: item as HTMLElement,
-                start: `top ${headerHeight * 2}px`,
+                start: `top ${headerHeight * 3}px`,
                 end: 'bottom top',
                 onEnter: () => {
                     setCurrentIndex(index)

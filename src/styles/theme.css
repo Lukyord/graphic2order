@@ -1042,3 +1042,28 @@ html.no-touchevents [data-card='work-list']:hover .card-media {
     margin-left: auto;
     margin-top: var(--spacing-xl);
 }
+
+/* PAGE: SERVICE */
+/* SERVICE HERO */
+.service-page {
+    margin-bottom: calc(var(--gap-section) * 2);
+}
+[data-section='service-hero'] .sc-title-text > .vw-ttl {
+    margin-top: 0;
+}
+
+[data-section='service-hero'] .sc-title-text > .vw-ttl:nth-child(2) {
+    margin-left: 30%;
+}
+
+[data-section='service-hero'] .sc-title-text > .vw-ttl:nth-child(3) {
+    text-align: right;
+}
+
+[data-section='service-hero'] .hero-desc {
+    margin-left: auto;
+    margin-top: var(--spacing-xl);
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-sm);
+}
