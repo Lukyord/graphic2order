@@ -19,12 +19,12 @@ export default async function Footer({ locale }: FooterProps) {
         {
             icon: 'ic-mail',
             label: tFooter('email'),
-            value: siteSettings.contactInfo?.email,
+            value: `mailto:${siteSettings.contactInfo?.email}`,
         },
         {
             icon: 'ic-phone',
             label: tFooter('phone'),
-            value: siteSettings.contactInfo?.phone,
+            value: `tel:${siteSettings.contactInfo?.phone}`,
         },
         {
             icon: 'ic-facebook',

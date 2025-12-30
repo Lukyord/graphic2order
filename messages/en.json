@@ -68,5 +68,14 @@
         "minssion-1": "Our mission is simple:",
         "mission-2": "turn bold ideas into powerful visuals",
         "mission-3": "that move people and grow businesses."
+    },
+    "Contact": {
+        "get-in-touch": "Get In Touch",
+        "card-message": "One message could be the start of your next big idea. We're ready when you are.",
+        "lets-talk": "Let's Talk.",
+        "or-call": "Or Call",
+        "followers": "Followers",
+        "desc": "Good design travels fast. Make sure you're not the last to see it — Follow us on",
+        "and": "and"
     }
 }

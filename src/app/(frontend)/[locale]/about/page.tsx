@@ -1,10 +1,11 @@
 export const dynamic = 'force-dynamic'
 
+import { getTranslations, setRequestLocale } from 'next-intl/server'
+
 import AnimateOnScroll from '@/components/common/animate-on-scroll'
 import { SplitTextComponent } from '@/components/common/split-text'
 import { Draggable } from '@/components/template/Draggable/Draggable'
 import { GlassElement } from '@/components/template/GlassElement/GlassElement'
-import { getTranslations, setRequestLocale } from 'next-intl/server'
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params

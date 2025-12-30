@@ -406,4 +406,29 @@
     [data-section='about-hero'] .hero-desc {
         flex-direction: column;
     }
+
+    /* PAGE: CONTACT */
+    /* CONTACT */
+
+    [data-section='contact-info'] .contact-card {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+    }
+
+    [data-section='contact-info'] .contact-card .back .back-inner {
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    [data-section='contact-info'] .contact-card .back .card-desc {
+        width: 100%;
+        text-align: center;
+    }
+
+    [data-section='contact-info'] .contact-card .back .card-contact-info {
+        width: 100%;
+    }
 }
