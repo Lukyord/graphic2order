@@ -1,10 +1,10 @@
-import { Locale } from '@/i18n/routing'
-import AnimateOnScroll from '../common/animate-on-scroll'
 import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
+
 import { SplitTextComponent } from '../common/split-text'
 import { Draggable } from './Draggable/Draggable'
 import { GlassElement } from './GlassElement/GlassElement'
+import AnimateOnScroll from '../common/animate-on-scroll'
 
 export default async function CtaSection() {
     const tGeneralButton = await getTranslations('General.Button')

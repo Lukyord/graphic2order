@@ -8,7 +8,10 @@ if (typeof window !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger)
 }
 
-type AnimateOnScrollProps = {
+type AnimateOnScrollProps = Omit<
+    React.HTMLAttributes<HTMLDivElement>,
+    'className' | 'onEnter' | 'onLeave'
+> & {
     children: ReactNode
     className?: string
     triggerClass?: string | string[]
@@ -34,6 +37,7 @@ export default function AnimateOnScroll({
     onLeave,
     onEnterBack,
     onLeaveBack,
+    ...rest
 }: AnimateOnScrollProps) {
     const elementRef = useRef<HTMLDivElement>(null)
 
@@ -123,7 +127,7 @@ export default function AnimateOnScroll({
     ])
 
     return (
-        <div ref={elementRef} className={className}>
+        <div ref={elementRef} className={className} {...rest}>
             {children}
         </div>
     )

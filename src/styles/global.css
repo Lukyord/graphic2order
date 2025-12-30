@@ -965,6 +965,10 @@ section.header-margin {
     position: relative;
 }
 
+.card div[inert] {
+    position: absolute !important;
+}
+
 .card-content {
     display: flex;
     flex-direction: column;

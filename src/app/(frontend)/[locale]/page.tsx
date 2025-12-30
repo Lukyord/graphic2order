@@ -70,6 +70,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
     return (
         <main id="main" className="index-page">
+            <h1 className="visually-hidden">Graphic2order - Homepage</h1>
+
             {/* HERO */}
             <section data-section="homepage-hero" className="header-padding">
                 <div className="sc-inner pc-t-150 pc-b-75 mb-t-125 mb-b-125">

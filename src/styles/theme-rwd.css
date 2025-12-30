@@ -19,6 +19,32 @@
     /* DEFAULT ====================*/
 
     /* SECTION ====================*/
+    /* COLLECTION ACTION */
+    .collection-action {
+        --item-height: 3.2rem;
+    }
+
+    .view-toggle-btn {
+        width: 4.5rem;
+    }
+
+    .view-toggle-btn:nth-child(1) {
+        padding-left: var(--spacing-3xs);
+    }
+
+    .view-toggle-btn:nth-child(2) {
+        padding-right: var(--spacing-3xs);
+    }
+
+    /* FILTER */
+    .filter .filter-trigger {
+        padding: var(--spacing-5xs) var(--spacing-2xs);
+    }
+
+    .filter .filter-menu {
+        top: calc(100% + var(--spacing-3xs));
+    }
+
     /* CTA */
     [data-section='cta'] .sc-title-text-wrapper,
     [data-section='cta'] [class*='block-content-'] {
@@ -118,6 +144,19 @@
 
     .work-fancybox-content .content-grid .grid-item .work-type-tag {
         padding: var(--spacing-5xs) var(--spacing-2xs);
+    }
+
+    /* WORK LIST */
+    .work-collection-list:after {
+        content: none;
+    }
+
+    [data-card='work-list'] {
+        grid-template-columns: 1fr 6rem;
+    }
+
+    [data-card='work-list'] .card-header {
+        padding: var(--spacing-md) 0;
     }
 
     /* LIQUID GLASS */
@@ -301,5 +340,15 @@
         flex-direction: column;
         align-items: flex-start;
         gap: var(--spacing-2sm);
+    }
+
+    /* PAGE: WORK */
+    /* WORK HERO */
+    [data-section='work-hero'] .sc-title-text > .vw-ttl:nth-child(2) {
+        text-align: left;
+    }
+
+    [data-section='work-hero'] [class*='block-content-'] {
+        margin-top: var(--spacing-6xl);
     }
 }
