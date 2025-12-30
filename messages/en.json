@@ -60,5 +60,13 @@
     },
     "NotFound": {
         "not-found-subttl": "(OH NO! THIS PAGE DOESN'T EXIST)"
+    },
+    "About": {
+        "about-hero-desc-1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+        "about-hero-desc-2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+        "brand-desc": "is a creative agency built to make brands unforgettable.",
+        "minssion-1": "Our mission is simple:",
+        "mission-2": "turn bold ideas into powerful visuals",
+        "mission-3": "that move people and grow businesses."
     }
 }

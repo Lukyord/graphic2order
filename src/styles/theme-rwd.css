@@ -364,7 +364,6 @@
 
     [data-section='service-hero'] .hero-desc {
         flex-direction: column;
-        gap: var(--spacing-sm);
     }
 
     /* PAGE: NOT FOUND */
@@ -396,5 +395,15 @@
         align-self: center;
         font-size: 6.1538461538vw;
         padding: 3.07692307692vw 6.1538461538vw;
+    }
+
+    /* PAGE: ABOUT */
+    /* ABOUT HERO */
+    [data-section='about-hero'] .vw-ttl {
+        font-size: 12.8205128205vw;
+    }
+
+    [data-section='about-hero'] .hero-desc {
+        flex-direction: column;
     }
 }

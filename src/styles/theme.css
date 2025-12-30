@@ -1124,3 +1124,45 @@ html.no-touchevents [data-card='work-list']:hover .card-media {
     opacity: 0;
     animation: fadeIn 0.5s ease-in-out 1s forwards;
 }
+
+/* PAGE: ABOUT */
+/* ABOUT HERO */
+[data-section='about-hero'] .sc-title-text > .vw-ttl {
+    margin-top: 0;
+}
+
+[data-section='about-hero'] .vw-ttl {
+    font-size: 8.6vw;
+}
+
+[data-section='about-hero'] .hero-desc {
+    margin-left: auto;
+    margin-top: var(--spacing-xl);
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-sm);
+}
+
+[data-section='about-info'] .container {
+    max-width: 96rem;
+    text-align: center;
+}
+
+[data-section='about-info'] .sc-ttl {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+[data-section='about-info'] .about-desc {
+    font-size: var(--font-size-h3);
+    line-height: var(--line-height-h3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2lg);
+}
+
+[data-section='about-info'] .about-desc .highlight {
+    background-color: var(--color-blue);
+    margin: 0 var(--spacing-xs);
+    line-height: 1;
+}
