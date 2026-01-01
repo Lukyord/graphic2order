@@ -15,6 +15,8 @@ export default async function LocaleNotFound({ params }: { params?: Promise<{ lo
 
     return (
         <main id="main" className="not-found-page">
+            <h1 className="visually-hidden">{tNotFound('h1')}</h1>
+
             <section data-section="not-found">
                 <div className="no-found-content">
                     <Draggable

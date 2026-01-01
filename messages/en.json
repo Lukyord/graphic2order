@@ -29,6 +29,7 @@
         "tiktok": "Tiktok"
     },
     "Homepage": {
+        "h1": "Graphic2order - Homepage",
         "hero-desc": "Graphic2order is a creative studio specializing in Logo, CI Stationary, and packaging. We believe powerful design goes beyond aesthetics. By combining creativity with technology, we deliver solutions that make brands unforgettable.",
         "about-cta": {
             "about-desc": "We believe powerful design is not just about looking good, but about creating meaning, consistency, and impact. By combining strategic thinking, creativity, and technology, we help brands communicate clearly and stand out in a competitive world.",
@@ -45,6 +46,7 @@
         }
     },
     "Work": {
+        "h1": "Graphic2order - Work Page",
         "work-item": {
             "industry": "Industry",
             "year": "Year",
@@ -55,13 +57,16 @@
         "work-filter-all": "All"
     },
     "Service": {
+        "h1": "Graphic2order - Service Page",
         "service-hero-desc-1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
         "service-hero-desc-2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
     },
     "NotFound": {
+        "h1": "Graphic2order - Not Found Page",
         "not-found-subttl": "(OH NO! THIS PAGE DOESN'T EXIST)"
     },
     "About": {
+        "h1": "Graphic2order - About Page",
         "about-hero-desc-1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
         "about-hero-desc-2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
         "brand-desc": "is a creative agency built to make brands unforgettable.",
@@ -70,6 +75,7 @@
         "mission-3": "that move people and grow businesses."
     },
     "Contact": {
+        "h1": "Graphic2order - Contact Page",
         "get-in-touch": "Get In Touch",
         "card-message": "One message could be the start of your next big idea. We're ready when you are.",
         "lets-talk": "Let's Talk.",
@@ -77,5 +83,9 @@
         "followers": "Followers",
         "desc": "Good design travels fast. Make sure you're not the last to see it — Follow us on",
         "and": "and"
+    },
+    "Pricing": {
+        "h1": "Graphic2order - Pricing Page",
+        "pricing-hero-desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
     }
 }

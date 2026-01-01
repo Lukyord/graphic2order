@@ -71,6 +71,7 @@ export interface Config {
     media: Media;
     'work-type': WorkType;
     work: Work;
+    package: Package;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -81,6 +82,7 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     'work-type': WorkTypeSelect<false> | WorkTypeSelect<true>;
     work: WorkSelect<false> | WorkSelect<true>;
+    package: PackageSelect<false> | PackageSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -236,17 +238,79 @@ export interface Work {
     [k: string]: unknown;
   } | null;
   /**
-   * The main media of the work
+   * The main media of the work, the aspect ratio should be 1 if the orientation is Square, and 2.07 if the orientation is Horizontal
    */
   mainMedia?: (number | null) | Media;
   /**
-   * The media to display when hovering over the work in the list
+   * The media to display when hovering over the work in the list, the aspect ratio should be 1
    */
   listHoverMedia?: (number | null) | Media;
   /**
    * The gallery of the work
    */
   gallery?: (number | Media)[] | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "package".
+ */
+export interface Package {
+  id: number;
+  /**
+   * The title of the package
+   */
+  title?: string | null;
+  /**
+   * The media of the packaged pricing, the aspect ratio should be 1
+   */
+  mainMedia?: (number | null) | Media;
+  /**
+   * The code of the package
+   */
+  code?: string | null;
+  /**
+   * Price in THB
+   */
+  price?: number | null;
+  /**
+   * Short description of the package
+   */
+  description?: string | null;
+  /**
+   * Summary of the package in bullet points
+   */
+  summary?:
+    | {
+        description?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Details of the package
+   */
+  details?:
+    | {
+        title?: string | null;
+        content?: {
+          root: {
+            type: string;
+            children: {
+              type: any;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        id?: string | null;
+      }[]
+    | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -272,6 +336,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'work';
         value: number | Work;
+      } | null)
+    | ({
+        relationTo: 'package';
+        value: number | Package;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -377,6 +445,32 @@ export interface WorkSelect<T extends boolean = true> {
   mainMedia?: T;
   listHoverMedia?: T;
   gallery?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "package_select".
+ */
+export interface PackageSelect<T extends boolean = true> {
+  title?: T;
+  mainMedia?: T;
+  code?: T;
+  price?: T;
+  description?: T;
+  summary?:
+    | T
+    | {
+        description?: T;
+        id?: T;
+      };
+  details?:
+    | T
+    | {
+        title?: T;
+        content?: T;
+        id?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }

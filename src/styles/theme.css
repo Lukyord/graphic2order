@@ -841,6 +841,7 @@ html.no-touchevents [data-card='work-list']:hover .card-media {
     height: fit-content;
     aspect-ratio: 2.6809;
     flex-shrink: 0;
+    position: relative;
 }
 
 .footer-info {

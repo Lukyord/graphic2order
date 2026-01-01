@@ -21,7 +21,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
     const contactSettings = await getContactSettings()
     return (
         <main id="main" className="contact-page">
-            <h1 className="visually-hidden">Graphic2order - Contact Page</h1>
+            <h1 className="visually-hidden">{tContact('h1')}</h1>
 
             {/* CTA */}
             <CtaSection />

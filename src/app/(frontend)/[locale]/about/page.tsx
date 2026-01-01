@@ -14,7 +14,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
     const tAbout = await getTranslations('About')
     return (
         <main id="main" className="about-page">
-            <h1 className="visually-hidden">Graphic2order - About Page</h1>
+            <h1 className="visually-hidden">{tAbout('h1')}</h1>
 
             {/* HERO INFO */}
             <section data-section="about-hero" className="header-padding">

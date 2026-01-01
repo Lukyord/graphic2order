@@ -18,6 +18,8 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
 
     return (
         <main id="main" className="service-page">
+            <h1 className="visually-hidden">{tService('h1')}</h1>
+
             {/* HERO INFO */}
             <section data-section="service-hero" className="header-padding">
                 <div className="sc-inner pc-t-200 pc-b-200 mb-t-200 mb-b-200">

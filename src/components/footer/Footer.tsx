@@ -52,7 +52,14 @@ export default async function Footer({ locale }: FooterProps) {
         <footer id="footer">
             <div className="footer-nav">
                 <div className="footer-logo">
-                    <RenderMedia src="/media/logo-full-hrz-white.webp" alt="Graphic2Order Logo" />
+                    <Link href="/" className="link-overlay">
+                        &nbsp;
+                    </Link>
+                    <RenderMedia
+                        src="/media/logo-full-hrz-white.webp"
+                        alt="Graphic2Order Logo"
+                        priority
+                    />
                 </div>
 
                 <div className="footer-info">

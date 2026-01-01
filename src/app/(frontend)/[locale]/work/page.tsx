@@ -27,7 +27,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
 
     return (
         <main id="main" className="work-page">
-            <h1 className="visually-hidden">Graphic2order - Work Page</h1>
+            <h1 className="visually-hidden">{tWork('h1')}</h1>
 
             {/* HERO INFO */}
             <section data-section="work-hero" className="header-padding">

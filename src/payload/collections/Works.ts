@@ -69,7 +69,8 @@ export const Works: CollectionConfig = {
             type: 'upload',
             relationTo: 'media',
             admin: {
-                description: 'The main media of the work',
+                description:
+                    'The main media of the work, the aspect ratio should be 1 if the orientation is Square, and 2.07 if the orientation is Horizontal',
             },
         },
         {
@@ -78,7 +79,8 @@ export const Works: CollectionConfig = {
             type: 'upload',
             relationTo: 'media',
             admin: {
-                description: 'The media to display when hovering over the work in the list',
+                description:
+                    'The media to display when hovering over the work in the list, the aspect ratio should be 1',
             },
         },
         {
