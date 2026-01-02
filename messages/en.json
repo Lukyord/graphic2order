@@ -86,6 +86,8 @@
     },
     "Pricing": {
         "h1": "Graphic2order - Pricing Page",
-        "pricing-hero-desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+        "pricing-hero-desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+        "show-more": "Show More Details",
+        "show-less": "Collapese Details"
     }
 }
