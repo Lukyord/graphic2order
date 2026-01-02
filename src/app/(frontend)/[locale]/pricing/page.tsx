@@ -12,9 +12,8 @@ import {
     AccordionTitle,
     AccordionPanel,
 } from '@/components/common/accordion/index'
-import { TabContainer, TabContent, TabContents } from '@/components/common/tab/index'
 import { PackageComparison } from '@/components/pricing/PackageComparison'
-import { LexicalToHTML } from '@/components/common/lexicaltoHTML'
+import AnimateOnScroll from '@/components/common/animate-on-scroll'
 
 export const dynamic = 'force-dynamic'
 
@@ -92,13 +91,13 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
                         </div>
 
                         <div className="block-content-center">
-                            <div className="block-desc">
+                            <AnimateOnScroll triggerClass="fadeIn" className="block-desc">
                                 <p>{tPricing('pricing-hero-desc')}</p>
-                            </div>
+                            </AnimateOnScroll>
                         </div>
 
                         {packages && packages.length > 0 && (
-                            <div className="packages-container">
+                            <AnimateOnScroll triggerClass="fadeIn" className="packages-container">
                                 {Array.from({ length: 3 }).map((_, i) => (
                                     <PackageComparison
                                         key={`package-comparison-${i}`}
@@ -107,7 +106,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
                                         defaultPackageIndex={i}
                                     />
                                 ))}
-                            </div>
+                            </AnimateOnScroll>
                         )}
                     </div>
                 </div>
