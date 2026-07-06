@@ -1160,6 +1160,7 @@ html.no-touchevents [data-card='work-list']:hover .card-media {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-2lg);
+    white-space: pre-line;
 }
 
 [data-section='about-info'] .about-desc .highlight {
