@@ -58,8 +58,8 @@
     },
     "Service": {
         "h1": "Graphic2order - Service Page",
-        "service-hero-desc-1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-        "service-hero-desc-2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+        "service-hero-desc-1": "Graphic2order originated from the idea of \"made-to-order graphics,\" drawing inspiration from the bespoke nature of made-to-order restaurants. We believe that since every business has distinct needs and a unique identity, design should never be a one-size-fits-all template. Instead, it must be created from scratch to genuinely reflect who you are as a brand.",
+        "service-hero-desc-2": "We focus on delivering high-quality, functional designs that elevate your brand's credibility. Our mission is to make professional design accessible to businesses of all sizes, offering reasonable rates that provide an excellent return on investment."
     },
     "NotFound": {
         "h1": "Graphic2order - Not Found Page",
@@ -86,7 +86,7 @@
     },
     "Pricing": {
         "h1": "Graphic2order - Pricing Page",
-        "pricing-hero-desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+        "pricing-hero-desc": "Choose the design service that best aligns with your brand goals. Whether you are starting with a logo, building a CI Brand system, or developing product packaging, our team is ready to guide you ,helping you begin with confidence while making the most of your budget",
         "show-more": "Show More Details",
         "show-less": "Collapese Details"
     }
