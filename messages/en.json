@@ -33,11 +33,11 @@
         "hero-desc": "Graphic2order originated from the idea of \"made-to-order graphics,\" drawing inspiration from the bespoke nature of made-to-order restaurants. We believe that since every business has distinct needs and a unique identity, design should never be a one-size-fits-all template. Instead, it must be created from scratch to genuinely reflect who you are as a brand.",
         "about-cta": {
             "about-desc": "We focus on delivering high-quality, functional designs that elevate your brand's credibility. Our mission is to make professional design accessible to businesses of all sizes, offering reasonable rates that provide an excellent return on investment.",
-            "about-projects-desc": "From startups to established brands, we've delivered numerous creative projects—each crafted with purpose, precision, and a deep understanding of brand identity.",
+            "about-projects-desc": "With experience accumulated from over 1,000 design projects across a wide range of businesses, Graphic2order understands that every brand has different goals, challenges, and identities. This experience allows us to create designs that are not only visually appealing, but also practical, thoughtful, and suitable for real business use.",
             "about-project": "Projects",
-            "about-partners-desc": "We've collaborated with clients and partners across multiple industries, building long-term relationships based on trust, creativity, and consistent results.",
-            "about-partner": "Partners",
-            "about-est-desc": "With our extensive experience in the creative industry, we bring experience, insight, and adaptability to every project—growing alongside our clients' brands.",
+            "about-partners-desc": "United States, Singapore, Myanmar, Laos, China, Thailand, Taiwan, Australia",
+            "about-partner": "Countries Served",
+            "about-est-desc": "Graphic2order was founded in 2022 with a simple belief: every business is unique, and design should be created specifically for each brand. Inspired by the idea of “custom-made graphics,” our approach reflects a design process that is tailored to the real needs of every client.",
             "about-est": "Est. Since"
         },
         "featured-works": {
@@ -67,12 +67,12 @@
     },
     "About": {
         "h1": "Graphic2order - About Page",
-        "about-hero-desc-1": "Graphic2order originated from the idea of \"made-to-order graphics,\" drawing inspiration from the bespoke nature of made-to-order restaurants.",
-        "about-hero-desc-2": " We believe that since every business has distinct needs and a unique identity, design should never be a one-size-fits-all template. Instead, it must be created from scratch to genuinely reflect who you are as a brand.",
-        "brand-desc": "was born from the concept of \"made-to-order graphics,\" inspired by made-to-order restaurants. We believe that every business has its own unique identity and specific needs. Therefore, design shouldn't be a ready-made template; it should be custom-crafted to truly reflect each brand's authentic identity.\n\nWe prioritize high-quality, practical designs that help build a credible image. We are dedicated to making professional-level design accessible to every business at a reasonable price that is truly worth the investment.",
-        "minssion-1": "Graphic2order:",
-        "mission-2": "Because good design should be designed for you,",
-        "mission-3": "and it should be accessible to every business."
+        "about-hero-desc-1": "We work with a professional process while keeping the experience approachable for businesses of all sizes. From listening to your ideas and understanding your brand to carefully crafting every design detail",
+        "about-hero-desc-2": "we create work that is not only visually appealing, but also high-quality, practical, and helps your brand look more trustworthy and professional.",
+        "brand-desc": "is a creative agency built to make brands unforgettable.",
+        "minssion-1": "Our mission is simple:",
+        "mission-2": "turn bold ideas into powerful visuals",
+        "mission-3": "that move people and grow businesses."
     },
     "Contact": {
         "h1": "Graphic2order - Contact Page",

@@ -19,10 +19,10 @@ export const HomepageSettings: GlobalConfig = {
                 },
                 {
                     name: 'partnersCount',
-                    label: 'Partners Count',
+                    label: 'Countries Count',
                     type: 'text',
                     admin: {
-                        description: 'The number of partners to display on the homepage',
+                        description: 'The number of countries served to display on the homepage',
                     },
                 },
             ],

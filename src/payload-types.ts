@@ -561,7 +561,7 @@ export interface HomepageSetting {
      */
     projectsCount?: string | null;
     /**
-     * The number of partners to display on the homepage
+     * The number of countries served to display on the homepage
      */
     partnersCount?: string | null;
   };
