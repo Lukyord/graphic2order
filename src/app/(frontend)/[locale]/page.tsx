@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 
@@ -17,6 +16,7 @@ import WorkGridItem from '@/components/work/WorkGridItem'
 import FancyboxGallery from '@/components/template/FancyboxGallery'
 import ServicesSection from '@/components/services/ServicesSection'
 import CtaSection from '@/components/template/CtaSection'
+import { Link } from '@/i18n/navigation'
 
 export const dynamic = 'force-dynamic'
 
